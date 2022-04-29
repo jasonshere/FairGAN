@@ -30,7 +30,7 @@ if __name__ == "__main__":
 
     print("Splitting dataset into training set and test set...")
     for i, tp in enumerate(xf.partition_rows(ratings, FOLDS)):
-        print("Processing fold: " .format(i + 1))
+        print("Processing fold: {}" .format(i + 1))
         tp.train.to_csv(r'./data/{}/train_df_{}.csv'.format(ds_name, i+1), index=False)
         tp.test.to_csv(r'./data/{}/test_df_{}.csv'.format(ds_name, i+1), index=False)
 
