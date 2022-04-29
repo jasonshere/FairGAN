@@ -223,7 +223,7 @@ class FairGAN(tf.keras.Model):
 
                 # Decode input to fake item scores
                 ranker_gen_pred = self.ranker_gen(conditions, training=True)
-                controller_gen_pred = self.exp_gen(ranker_gen_pred, training=False)
+                controller_gen_pred = self.controller_gen(ranker_gen_pred, training=False)
 
                 approx_exposure = tf.reduce_mean(controller_gen_pred, axis=0)
                 loss = self.alpha * tf.reduce_sum(tf.abs(approx_exposure[:, None] - approx_exposure[None, :])) / (2. * tf.cast(self.n_items, tf.float32) * tf.reduce_sum(approx_exposure))
