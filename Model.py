@@ -212,7 +212,7 @@ class FairGAN(tf.keras.Model):
                 # Distributor
                 controller_dis_fake_output = self.controller_dis(controller_gen_pred, training=False)
                 loss = self.generator_loss(controller_dis_fake_output) 
-                loss += tf.add_n([ tf.nn.l2_loss(v) for v in self.controler_gen.trainable_weights]) * self.controller_gen_reg
+                loss += tf.add_n([ tf.nn.l2_loss(v) for v in self.controller_gen.trainable_weights]) * self.controller_gen_reg
 
             grads = tape.gradient(loss, self.controller_gen.trainable_weights)
             self.controller_gen_optimizer.apply_gradients(zip(grads, self.controller_gen.trainable_weights))
