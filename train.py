@@ -72,4 +72,4 @@ if __name__ == "__main__":
 
     # Evaluate
     print("Evaluate on test set:")
-    model.evaluate(test_ds.batch(train.shape[0]))
+    print(model.evaluate(test_ds.batch(train.shape[0])))
