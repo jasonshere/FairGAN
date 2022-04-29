@@ -1,3 +1,6 @@
+import tensorflow as tf
+
+
 class GAN(object):
 
     @classmethod
@@ -32,7 +35,7 @@ class FairGAN(tf.keras.Model):
         self.alpha = params['alpha']
         self._lambda = params['lambda']
         self.n_items = params['n_items']
-        
+
         self.ranker_gen_reg = params['ranker_gen_reg']
         self.ranker_dis_reg = params['ranker_dis_reg']
         self.controller_gen_reg = params['controller_gen_reg']

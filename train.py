@@ -3,6 +3,8 @@ import pandas as pd
 from DataProcessor import DataProcessor
 from DataProcessor import DatasetPipeline
 import Config
+import tensorflow_ranking as tfr
+import tensorflow_probability as tfp
 from Model import FairGAN
 
 
