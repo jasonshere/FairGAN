@@ -78,6 +78,7 @@ class FairGAN(tf.keras.Model):
 
     def compile(self, metrics=None, params=None):
         super(FairGAN, self).compile(weighted_metrics=metrics, run_eagerly=params['debug'])
+        self.metrics = metrics
         
         # optimizers
 
@@ -121,16 +122,15 @@ class FairGAN(tf.keras.Model):
         return -tf.reduce_mean(fake_output)
 
     def test_step(self, val_ds):
-
         conditions, labels = val_ds
         labels = tf.cast(labels, tf.float32)
         conditions = tf.cast(conditions, tf.float32)
         ranker_predictions = self.ranker_gen(conditions, training=False)
+        ranker_generated_scores = tf.cast(ranker_predictions * (1 - conditions), tf.float32)
 
         rets = {}
         # Update the metrics.
         for m in self.metrics:
-            ranker_generated_scores = tf.cast(ranker_predictions * (1 - conditions), tf.float32)
             rets[m.name] = m(labels, ranker_generated_scores)
 
         # Return a dict mapping metric names to current value.
@@ -232,4 +232,3 @@ class FairGAN(tf.keras.Model):
             grads = tape.gradient(loss, self.ranker_gen.trainable_weights)
             self.controlling_fairness_optimizer.apply_gradients(zip(grads, self.ranker_gen.trainable_weights))
         return {}
-        
