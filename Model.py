@@ -125,13 +125,13 @@ class FairGAN(tf.keras.Model):
         conditions, labels = val_ds
         labels = tf.cast(labels, tf.float32)
         conditions = tf.cast(conditions, tf.float32)
-        accu_predictions = self.accu_gen(conditions, training=False)
+        ranker_predictions = self.ranker_gen(conditions, training=False)
 
         rets = {}
         # Update the metrics.
         for m in self.metrics:
-            accu_generated_scores = tf.cast(accu_predictions * (1 - conditions), tf.float32)
-            rets[m.name] = m(labels, accu_generated_scores)
+            ranker_generated_scores = tf.cast(ranker_predictions * (1 - conditions), tf.float32)
+            rets[m.name] = m(labels, ranker_generated_scores)
 
         # Return a dict mapping metric names to current value.
         return rets
@@ -232,3 +232,4 @@ class FairGAN(tf.keras.Model):
             grads = tape.gradient(loss, self.ranker_gen.trainable_weights)
             self.controlling_fairness_optimizer.apply_gradients(zip(grads, self.ranker_gen.trainable_weights))
         return {}
+        
