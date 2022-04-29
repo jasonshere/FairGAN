@@ -232,12 +232,3 @@ class FairGAN(tf.keras.Model):
             grads = tape.gradient(loss, self.ranker_gen.trainable_weights)
             self.controlling_fairness_optimizer.apply_gradients(zip(grads, self.ranker_gen.trainable_weights))
         return {}
-
-    @property
-    def metrics(self):
-        # We list our `Metric` objects here so that `reset_states()` can be
-        # called automatically at the start of each epoch
-        # or at the start of `evaluate()`.
-        # If you don't implement this property, you have to call
-        # `reset_states()` yourself at the time of your choosing.
-        return metrics
