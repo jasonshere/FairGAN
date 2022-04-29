@@ -53,12 +53,12 @@ class FairGAN(tf.keras.Model):
         self.accu_gen = GAN.make_model(self.n_items, 
                                     hidden_layers=params['ranker_gen_layers'], 
                                     activation=params['ranker_gen_activation'], 
-                                    dropout=params['ranker_gen_dropout'], init=self.accu_initailizer, output_act='tanh', name="ranker_gen")
+                                    dropout=params['ranker_gen_dropout'], init=self.ranker_initailizer, output_act='tanh', name="ranker_gen")
 
         self.exp_gen = GAN.make_model(self.n_items, 
                                     hidden_layers=params['ranker_gen_layers'], 
                                     activation=params['ranker_gen_activation'], 
-                                    dropout=params['ranker_gen_dropout'], init=self.exp_initailizer, output_act='softmax', name="controller_gen")
+                                    dropout=params['ranker_gen_dropout'], init=self.controller_initailizer, output_act='softmax', name="controller_gen")
 
 
         # Discriminator Models
