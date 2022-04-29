@@ -23,7 +23,7 @@ class AmazonDatasetsLoader(object):
         while True:
             rts = rts[rts.groupby('user_id')['user_id'].transform('count') >= UN]
             rts = rts[rts.groupby('item_id')['item_id'].transform('count') >= IN]
-            print(rts.groupby('user_id').count().min().rating, rts.groupby('item_id').count().min().rating)
+            # print(rts.groupby('user_id').count().min().rating, rts.groupby('item_id').count().min().rating)
             if (rts.groupby('user_id').count().min().rating >= UN) and rts.groupby('item_id').count().min().rating >= IN:
                 break
             if np.isnan(rts.groupby('user_id').count().min().rating) or np.isnan(rts.groupby('item_id').count().min().rating):

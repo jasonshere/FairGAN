@@ -6,6 +6,7 @@ from Config import Config
 import tensorflow_ranking as tfr
 import tensorflow_probability as tfp
 from Model import FairGAN
+from Metrics import IED
 
 
 if __name__ == "__main__":
