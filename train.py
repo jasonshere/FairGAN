@@ -57,7 +57,7 @@ if __name__ == "__main__":
         IED(k=5, n_items=train.shape[1], name="IED@5"),
         IED(k=10, n_items=train.shape[1], name="IED@10"),
         IED(k=20, n_items=train.shape[1], name="IED@20"),
-        IED(k=train.shape[1], name="IED@all")
+        IED(k=train.shape[1], n_items=train.shape[1], name="IED@all")
     ]
     
     # Create model
