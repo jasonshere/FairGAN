@@ -245,6 +245,6 @@ class PreprocessDataset(object):
         return train_df, test_df
 
 
-    class DatasetPipeline(tf.data.Dataset):
-        def __new__(cls, labels, conditions, shape=None):
-            return tf.data.Dataset.from_tensor_slices((conditions, labels)).prefetch(tf.data.experimental.AUTOTUNE)
+class DatasetPipeline(tf.data.Dataset):
+    def __new__(cls, labels, conditions, shape=None):
+        return tf.data.Dataset.from_tensor_slices((conditions, labels)).prefetch(tf.data.experimental.AUTOTUNE)
