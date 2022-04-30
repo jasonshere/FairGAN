@@ -1,4 +1,11 @@
 # FairGAN: GANs-based Fairness-aware Learning for Recommendations with Implicit Feedback
+
+DOI: https://doi.org/10.1145/3485447.3511958
+
+Please feel free to contact with me by Email: mrjasonedu@gmail.com or 
+
+[Create Issues](https://github.com/jasonshere/FairGAN/issues) if you have any questions.
+
 ## Abstract:
 Ranking algorithms in recommender systems influence people to make decisions. Conventional ranking algorithms based on implicit feedback data aim to maximize the utility to users by capturing users’ preferences over items. However, these utility-focused algorithms tend to cause fairness issues that require careful consideration in online platforms. Existing fairness-focused studies does not explicitly consider the problem of lacking negative feedback in implicit feedback data, while previous utility-focused methods ignore the importance of fairness in recommendations. To fill this gap, we propose a Generative Adversarial Networks (GANs) based learning algorithm FairGAN mapping the exposure fairness issue to the problem of negative preferences in implicit feedback data. FairGAN does not explicitly treat unobserved interactions as negative, but instead, adopts a novel fairness-aware learning strategy to dynamically generate fairness signals. This optimizes the search direction to make FairGAN capable of searching the space of the optimal ranking that can fairly allocate exposure to individual items while preserving users’ utilities as high as possible.
 
@@ -71,3 +78,6 @@ Please cite our work using the following BibText if you find it's helpful in you
         pages={297--307},
         year={2022}
     }
+
+## License
+[Apache License 2.0](https://github.com/jasonshere/FairGAN/blob/main/LICENSE)
