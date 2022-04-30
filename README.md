@@ -5,11 +5,6 @@ Ranking algorithms in recommender systems influence people to make decisions. Co
 ## The structure of FairGAN:
 ![The structure of FairGAN](/assets/images/FairGAN.png "The structure of FairGAN")
 
-<style type="text/css">
-    img {
-        width: 70%;
-    }
-</style>
 
 ## Introduction
 ---
