@@ -69,7 +69,7 @@ Start to fit FairGAN using training set and evaluate the fitted model using test
 
 ## Citation
 
-Please cite our work using the following BibText if you find it's helpful in your reasearch:
+Please cite our work using the following BibTex if you find it's helpful in your reasearch:
 
     @inproceedings{li2022fairgan,
         title={FairGAN: GANs-based Fairness-aware Learning for Recommendations with Implicit Feedback},
