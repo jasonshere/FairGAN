@@ -71,5 +71,5 @@ if __name__ == "__main__":
     history = model.fit(train_ds.shuffle(train.shape[0]).batch(config['batch'], True), epochs=config['epochs'], callbacks=[])
 
     # Evaluate
-    print("Evaluate on test set:")
-    print(model.evaluate(test_ds.batch(train.shape[0])))
+    print("\nEvaluate on test set:")
+    model.evaluate(test_ds.batch(train.shape[0]))
