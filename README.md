@@ -55,7 +55,7 @@ Datasets that can be passed to `--dataset`:
 - Amazon-toys-and-games 
 - Amazon-beauty
 - Amazon-office-products
-- Amazon-digital-musics
+- Amazon-digital-music
 
 The processed dataset will be stored into `./data` directory for fitting and evaluating FairGAN later. We use `LensKit` to split the dataset, 5 splits will be stored, each of which extracts `20%` of the rows for testing and leaves `80%` for training.
 

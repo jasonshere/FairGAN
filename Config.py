@@ -125,7 +125,7 @@ Config = {
         'controller_initializer': 'glorot_normal',
         'debug': False
     },
-    'Amazon-digital-musics': {
+    'Amazon-digital-music': {
         'ds_name': 'Amazon-digital-musics',
         'epochs': 50,
         'batch': 128,
